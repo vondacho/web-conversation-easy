@@ -1,4 +1,4 @@
-This Java stuf provides an implementation of the web conversation pattern using an extended persistence context.
+This Java stuff provides an implementation of the web conversation pattern using an extended persistence context.
 
 Detail of the implementation
 - It uses Spring Transaction Management.
