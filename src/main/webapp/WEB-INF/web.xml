@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
- 
-        <context-param>
-                <param-name>contextConfigLocation</param-name>
-                <param-value>WEB-INF/web-context.xml</param-value>
-        </context-param>
- 
-        <listener>
-                <description>Create the spring web application context</description>
-                <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-        </listener>
- 
-        <listener>
-                <description>Propagate the application context into the ConfigurationHolders</description>
-                <listener-class>com.obya.common.web.listener.WebApplicationContextPropagator</listener-class>
-        </listener>
-        
-        
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>WEB-INF/web-context.xml</param-value>
+	</context-param>
+
+	<listener>
+		<description>Create the spring web application context</description>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<listener>
+		<description>Propagate the application context into the ConfigurationHolders</description>
+		<listener-class>com.obya.common.web.listener.WebApplicationContextPropagator</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>conversationFilter</filter-name>
+		<filter-class>com.obya.common.web.filter.ConversationFilter</filter-class>
+		<init-param>
+			<param-name>initiators</param-name>
+			<param-value>TOFIX any URL of the application</param-value>
+		</init-param>
+		<init-param>
+			<param-name>terminators</param-name>
+			<param-value>TOFIX any URL of the application</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>conversationFilter</filter-name>
+		<url-pattern>TOFIX any URL of the application participating in a conversation</url-pattern>
+	</filter-mapping>
 </web-app>
 
